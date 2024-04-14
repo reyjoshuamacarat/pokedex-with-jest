@@ -1,5 +1,5 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack"
-import { Component, ReactNode } from "react"
+import { Component } from "react"
 import { View, StyleSheet, Dimensions, FlatList } from "react-native"
 import { Pages } from "../types/Navigation"
 import { POKE_API } from "../utils"
