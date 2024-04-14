@@ -7,10 +7,9 @@ import { pokemonDetailResponseMock, pokemonMock } from "../../mocks"
 const feature = loadFeature("./src/__tests__/features/PokemonDetail.feature")
 
 defineFeature(feature, (test) => {
-  let props: any
+  let props: PokemonDetailProps
   beforeEach(() => {
     jest.resetModules()
-    jest.resetAllMocks()
     props = {
       navigation: {
         dispatch: jest.fn(),
