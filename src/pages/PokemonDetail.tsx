@@ -11,7 +11,7 @@ import {
 import { Pages } from "../types/Navigation"
 import { POKE_API } from "../utils"
 
-interface Props extends NativeStackScreenProps<Pages, "Detail"> {}
+export interface Props extends NativeStackScreenProps<Pages, "Detail"> {}
 
 interface State {
   description: string

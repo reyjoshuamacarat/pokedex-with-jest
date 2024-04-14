@@ -8,7 +8,6 @@ export interface Pokemon {
   height: string
   weight: string
 }
-1
 
 interface Ability {
   ability: NameUrl

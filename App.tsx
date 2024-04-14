@@ -1,4 +1,4 @@
-import { Component } from "react"
+import React, { Component } from "react"
 import { createStackNavigator } from "@react-navigation/stack"
 import { Pages } from "./src/types/Navigation"
 import { NavigationContainer } from "@react-navigation/native"

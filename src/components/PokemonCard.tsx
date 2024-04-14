@@ -12,7 +12,7 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack"
 import { Pages } from "../types/Navigation"
 import { NameUrl, Pokemon } from "../types/Pokemon"
 
-interface Props {
+export interface PokemonCardProps {
   navigation: NativeStackNavigationProp<Pages, "List", undefined>
   pokemon: NameUrl
 }
@@ -20,8 +20,8 @@ interface Props {
 interface State {
   pokemonData?: Pokemon
 }
-export default class PokemonCard extends Component<Props, State> {
-  constructor(props: Props) {
+export default class PokemonCard extends Component<PokemonCardProps, State> {
+  constructor(props: PokemonCardProps) {
     super(props)
     this.state = {
       pokemonData: undefined,

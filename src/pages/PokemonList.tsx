@@ -13,7 +13,7 @@ import { POKE_API } from "../utils"
 import { NameUrl, PokemonListResponse } from "../types/Pokemon"
 import PokemonCard from "../components/PokemonCard"
 
-interface Props extends NativeStackScreenProps<Pages, "List"> {}
+export interface Props extends NativeStackScreenProps<Pages, "List"> {}
 interface State {
   currentUrl: string | null
   pokemonList: NameUrl[]
