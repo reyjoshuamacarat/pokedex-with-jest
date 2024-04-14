@@ -1,13 +1,6 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack"
 import { Component, ReactNode } from "react"
-import {
-  View,
-  Text,
-  StyleSheet,
-  Pressable,
-  Dimensions,
-  FlatList,
-} from "react-native"
+import { View, StyleSheet, Dimensions, FlatList } from "react-native"
 import { Pages } from "../types/Navigation"
 import { POKE_API } from "../utils"
 import { NameUrl, PokemonListResponse } from "../types/Pokemon"
