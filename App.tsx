@@ -1,32 +1,40 @@
 import { Component } from "react"
-import { StatusBar } from "expo-status-bar"
-import { StyleSheet, Text, View } from "react-native"
+import { createStackNavigator } from "@react-navigation/stack"
+import { Pages } from "./src/types/Navigation"
+import { NavigationContainer } from "@react-navigation/native"
+import { PokemonList, PokemonDetail } from "./src/pages"
 
-interface Props {}
-
-interface State {}
-
-export default class App extends Component<Props, State> {
-  constructor(props: Props) {
+const RootStack = createStackNavigator<Pages>()
+export default class App extends Component<{}, {}> {
+  constructor(props: {}) {
     super(props)
   }
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <StatusBar style="auto" />
-      </View>
+      <NavigationContainer>
+        <RootStack.Navigator initialRouteName="List">
+          <RootStack.Screen
+            name="List"
+            component={PokemonList}
+            options={{
+              title: "Pokedex",
+              headerStyle: { backgroundColor: "#CC0000" },
+              headerTintColor: "white",
+            }}
+          />
+          <RootStack.Screen
+            name="Detail"
+            component={PokemonDetail}
+            options={{
+              headerStyle: { backgroundColor: "#CC0000" },
+              headerTitleStyle: { color: "white", textTransform: "capitalize" },
+              headerTintColor: "white",
+            }}
+          />
+        </RootStack.Navigator>
+      </NavigationContainer>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-})
 
