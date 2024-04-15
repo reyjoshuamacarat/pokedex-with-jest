@@ -31,7 +31,6 @@ defineFeature(feature, (test) => {
     })
 
     when("the Pokemon data is loaded", async () => {
-      await Promise.resolve() // wait for componentDidMount to complete
       wrapper.update()
     })
 

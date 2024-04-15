@@ -1,7 +1,7 @@
 import { Pokemon, PokemonListResponse } from "./types/Pokemon"
 
 export const pokemonListResponseMock: PokemonListResponse = {
-  count: 0,
+  count: 2,
   next: null,
   previous: null,
   results: [

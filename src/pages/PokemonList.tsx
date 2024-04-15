@@ -7,7 +7,7 @@ import { NameUrl, PokemonListResponse } from "../types/Pokemon"
 import PokemonCard from "../components/PokemonCard"
 
 export interface Props extends NativeStackScreenProps<Pages, "List"> {}
-interface State {
+export interface State {
   currentUrl: string | null
   pokemonList: NameUrl[]
   isEndReached: boolean
