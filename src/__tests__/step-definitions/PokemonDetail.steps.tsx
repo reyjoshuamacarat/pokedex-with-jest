@@ -1,4 +1,4 @@
-import { shallow, ShallowWrapper } from "enzyme"
+import { mount, ReactWrapper } from "enzyme"
 import { defineFeature, loadFeature } from "jest-cucumber"
 import { PokemonDetail, PokemonDetailProps } from "../../pages"
 import { mockFetch } from "../../utils"
@@ -25,11 +25,11 @@ defineFeature(feature, (test) => {
   })
 
   test("Render Pokemon Detail", ({ given, when, then }) => {
-    let wrapper: ShallowWrapper
+    let wrapper: ReactWrapper
     let instance: PokemonDetail
 
     given("I am on the Pokemon Detail screen", () => {
-      wrapper = shallow(<PokemonDetail {...props} />)
+      wrapper = mount(<PokemonDetail {...props} />)
     })
 
     when("I successfully load Pokemon Detail screen", () => {
@@ -38,8 +38,20 @@ defineFeature(feature, (test) => {
     })
 
     then("I should see details of the Pokemon", () => {
-      expect(wrapper).toBeTruthy()
-      expect(instance).toBeDefined()
+      expect(
+        wrapper
+          .find("Text")
+          .findWhere((node) => node.prop("testID") === "height")
+          .first()
+          .text(),
+      ).toBe(pokemonMock.height)
+      expect(
+        wrapper
+          .find("Text")
+          .findWhere((node) => node.prop("testID") === "weight")
+          .first()
+          .text(),
+      ).toBe(pokemonMock.weight)
     })
   })
 })

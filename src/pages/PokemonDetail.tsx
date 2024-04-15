@@ -55,7 +55,9 @@ export default class PokemonDetail extends Component<Props, State> {
           <View style={styles.row}>
             <View style={styles.card}>
               <Text>
-                <Text style={styles.title}>Dex Entry: {"\n"}</Text>
+                <Text style={styles.title} testID="description-title">
+                  Dex Entry: {"\n"}
+                </Text>
                 {this.state.description ? (
                   <Text style={styles.description}>
                     “{this.state.description}”
@@ -91,9 +93,13 @@ export default class PokemonDetail extends Component<Props, State> {
             </View>
             <View style={styles.card}>
               <Text style={styles.stat}>Height:</Text>
-              <Text style={styles.statValue}>{pokemon.height} </Text>
+              <Text style={styles.statValue} testID="height">
+                {pokemon.height}
+              </Text>
               <Text style={styles.stat}>Weight:</Text>
-              <Text style={styles.statValue}>{pokemon.weight}</Text>
+              <Text style={styles.statValue} testID="weight">
+                {pokemon.weight}
+              </Text>
             </View>
           </View>
         </View>
